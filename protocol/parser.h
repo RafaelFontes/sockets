@@ -1,11 +1,9 @@
-#ifndef PARSER_H
-#define PARSER_H
+#pragma once
 
+#include "export.h"
 
-class parser
+class EXPORT parser
 {
 public:
     parser();
 };
-
-#endif // PARSER_H

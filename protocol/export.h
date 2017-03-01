@@ -1,4 +1,7 @@
-#ifndef EXPORT_H
-#define EXPORT_H
+#pragma once
 
-#endif // EXPORT_H
+#ifndef PROTO_LIBRARY
+    #define EXPORT __declspec("dllimport")
+#else
+    #define EXPORT __declspec("dllexport")
+#endif

@@ -1,6 +1,8 @@
-TEMPLATE = app
-CONFIG += console c++11
-CONFIG -= app_bundle
-CONFIG -= qt
+TEMPLATE = subdirs
+CONFIG += ordered
+SUBDIRS = socket protocol test
 
-SOURCES += main.cpp
+test.depends = socket protocol
+protocol.depends = socket
+
+DISTFILES+="*.pl"
