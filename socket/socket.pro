@@ -35,8 +35,6 @@ SOURCES += \
     sock_io.cpp \
     server_hook.cpp
 
-header_files.files = $$HEADERS
-header_files.path = ../include/server
-INSTALLS += header_files
+LIBS += -llibeay32MT
 
-LIBS += -llibssl -llibcrypto
+system(lib.exe /OUT:libsocket.lib kernel32.lib user32.lib gdi32.lib advapi32.lib ssleay32MT.lib libeay32MT.lib R:/build/server/Release/lib/server.lib );

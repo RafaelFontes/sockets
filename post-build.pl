@@ -19,3 +19,5 @@ foreach (@files) {
 foreach (@files) {
   copy("$_","./include/protocol.");
 }
+
+copy("./socket/libsocket.lib","r:/build/server/release/lib/libsocket.lib");

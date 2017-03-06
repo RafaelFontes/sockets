@@ -22,11 +22,17 @@ Debug:UI_DIR = ../build/lib/debug/.ui
 HEADERS += \
     parser.h \
     parser.h \
-    export.h
+    export.h \
+    buffer_controller.h \
+    buffer.h \
+    buffer_stack.h
 
 SOURCES += \
     parser.cpp \
-    parser.cpp
+    parser.cpp \
+    buffer_controller.cpp \
+    buffer.cpp \
+    buffer_stack.cpp
 
 header_files.files = $$HEADERS
 header_files.path = ../include/server

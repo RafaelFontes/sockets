@@ -17,7 +17,7 @@ sock::sock()
     fd = ~0;
 }
 
-int sock::get_file_descriptor()
+unsigned int sock::get_file_descriptor()
 {
     if ( fd == ~0 )
     {

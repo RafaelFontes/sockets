@@ -16,7 +16,7 @@ public:
 
     sock();
 
-    int get_file_descriptor();
+    unsigned int get_file_descriptor();
     struct addrinfo * get_addr_info();
 
     void set_socket_type(sock::TYPE type, int flags);
