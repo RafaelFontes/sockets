@@ -1,6 +1,8 @@
 #include "sock_io.h"
 #include "server_hook.h"
 #include <WinSock2.h>
+#include <protocol/packet.h>
+#include <protocol/buffer.h>
 
 sock_io::sock_io(unsigned int fd, server_hook *hook, void * user_data ) : hook(hook), user_data(user_data), fd(fd)
 {
@@ -8,6 +10,19 @@ sock_io::sock_io(unsigned int fd, server_hook *hook, void * user_data ) : hook(h
 
     ioctlsocket( fd, FIONBIO, &io_blocking_disabled );
     is_socket_open = true;
+}
+
+void sock_io::read( packet &p )
+{
+    static const int size = 1450;
+
+    unsigned char buf[size];
+
+    memset(buf, 0, size);
+
+    int bytesAvailable = this->hook->read( user_data, buf, size );
+
+    p.setBuffer( new buffer( buf, bytesAvailable ) );
 }
 
 int sock_io::read(unsigned char *buf, unsigned int size)

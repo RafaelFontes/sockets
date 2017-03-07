@@ -21,3 +21,4 @@ foreach (@files) {
 }
 
 copy("./socket/libsocket.lib","r:/build/server/release/lib/libsocket.lib");
+copy("./socket/libsocketd.lib","r:/build/server/debug/lib/libsocket.lib");

@@ -4,11 +4,8 @@ CONFIG -= qt debug_and_release
 
 INCLUDEPATH += ../include
 
-LIBS += -L../lib -llibsocket -lprotocol
+LIBS += -L../lib -llibsocket
 DESTDIR=../bin
-
-Release:LIBS+=-llibsocket
-Debug:LIBS+=-lserverd
 
 TARGET=server-test
 Debug:TARGET=server-test-d

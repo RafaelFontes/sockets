@@ -1,5 +1,5 @@
 #pragma once
-
+#undef EXPORT
 #ifndef PROTO_LIBRARY
     #define EXPORT __declspec("dllimport")
 #else

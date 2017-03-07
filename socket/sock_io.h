@@ -1,6 +1,7 @@
 #pragma once
 
 class server_hook;
+class packet;
 
 class sock_io
 {
@@ -12,6 +13,8 @@ class sock_io
 
 public:
     explicit sock_io(unsigned int fd, server_hook * hook , void * user_data);
+
+    void read( packet & p );
 
     int read( unsigned char * buf, unsigned int size );
     int write( unsigned char * buf, unsigned int size );

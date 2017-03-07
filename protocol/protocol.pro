@@ -20,25 +20,19 @@ Debug:RCC_DIR = ../build/lib/debug/.rcc
 Debug:UI_DIR = ../build/lib/debug/.ui
 
 HEADERS += \
-    parser.h \
-    parser.h \
     export.h \
     buffer_controller.h \
     buffer.h \
-    buffer_stack.h
+    buffer_stack.h \
+    packet.h \
+    json.h
 
 SOURCES += \
-    parser.cpp \
-    parser.cpp \
     buffer_controller.cpp \
     buffer.cpp \
-    buffer_stack.cpp
+    buffer_stack.cpp \
+    packet.cpp
 
 header_files.files = $$HEADERS
 header_files.path = ../include/server
 INSTALLS += header_files
-
-system(cd .. && perl post-build.pl)
-
-Release:LIBS += -lserver
-Debug:LIBS += -lserverd

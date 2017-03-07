@@ -4,7 +4,7 @@
 
 buffer::buffer(unsigned char *data, unsigned int size) : size(size)
 {
-    std::cout << "-> buffer::buffer created:: " << (void*)this << std::endl;
+    //std::cout << "-> buffer::buffer created:: " << (void*)this << std::endl;
 
     if ( size > 0 )
     {
@@ -12,12 +12,12 @@ buffer::buffer(unsigned char *data, unsigned int size) : size(size)
         memcpy(this->data, data, size );
     }
 
-    std::cout << "<- buffer::buffer" << std::endl;
+    //std::cout << "<- buffer::buffer" << std::endl;
 }
 
 buffer::~buffer()
 {
-    std::cout << "-> buffer::~buffer" << std::endl;
+    //std::cout << "-> buffer::~buffer" << std::endl;
 
     if ( size > 0 )
     {
@@ -26,13 +26,13 @@ buffer::~buffer()
         size = 0;
     }
 
-    std::cout << "<- buffer::~buffer" << std::endl;
+    //std::cout << "<- buffer::~buffer" << std::endl;
 
 }
 
 void buffer::destroy()
 {    
-    std::cout << "-> buffer::destroy :: " << size << " bytes to free" << std::endl;
+    //std::cout << "-> buffer::destroy :: " << size << " bytes to free" << std::endl;
 
     if ( size > 0 )
     {
@@ -41,7 +41,7 @@ void buffer::destroy()
         size = 0;
     }
 
-    std::cout << "<- buffer::destroy :: " << (void*)this << std::endl;
+    //std::cout << "<- buffer::destroy :: " << (void*)this << std::endl;
 
 }
 

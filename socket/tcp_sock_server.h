@@ -1,7 +1,7 @@
 #pragma once
 
 #include "export.h"
-#include "sock.h";
+#include "sock.h"
 #include <WS2tcpip.h>
 #include <stdlib.h>
 #include "tls_server_hook.h"
@@ -20,8 +20,9 @@ class EXPORT tcp_sock_server
     {
         char buffer[10];
         memset(buffer, 0, 10);
+        _itoa_s(port, buffer, 10, 10);
 
-        handler->resolve_address_and_port( addr, itoa(port, buffer, 10) );
+        handler->resolve_address_and_port( addr, buffer );
 
         int fd = handler->get_file_descriptor();
 
